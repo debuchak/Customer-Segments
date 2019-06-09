@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>customer_segments-Copy3</title>
+<title>customer_segments-Copy4</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13143,7 +13143,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -13200,7 +13200,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Display a description of the dataset</span>
@@ -13342,7 +13342,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Select three indices of your choice you wish to sample from the dataset</span>
@@ -13496,7 +13496,7 @@ The Third Customer may be a market or a wholesale Retailer based on the higher t
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Make a copy of the DataFrame, using the &#39;drop&#39; function to drop the given feature</span>
@@ -13509,8 +13509,8 @@ The Third Customer may be a market or a wholesale Retailer based on the higher t
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">new_target_feat</span><span class="p">,</span><span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
 
 <span class="c1"># TODO: Create a decision tree regressor and fit it to the training set</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeRegressor</span>
+<span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">42</span><span class="p">)</span>
 <span class="n">regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 
 <span class="c1"># TODO: Report the score of the prediction using the testing set</span>
@@ -13535,7 +13535,7 @@ The Third Customer may be a market or a wholesale Retailer based on the higher t
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>R2 Score is -1.9203793381409042
+<pre>R2 Score is 0.6818840085440834
 </pre>
 </div>
 </div>
@@ -13560,7 +13560,7 @@ The Third Customer may be a market or a wholesale Retailer based on the higher t
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: I attempted to predict the purchase trend of the feature Grocery. The prediction score based on R2 score was -1.92. Based on the poor R2 score, the purchase trend of Grocery appears to be independent of the other features in the dataset. As a result the Grocery feature by itself is important for identifying customer spending habits</strong></p>
+<p><strong>Answer: I attempted to predict the purchase trend of the feature Grocery. The prediction score based on R2 score was 0.6819. The R2 score indicates that there is some dependency of the Grocery purchase on the remaining features of the dataset. This implies that grocery can be expressed as a function of the other features, indicating that we might be able to identify customer habits pretty well while dropping this feature itself.</strong></p>
 
 </div>
 </div>
@@ -14640,7 +14640,7 @@ Outliers repeated in multiple features are :  [154, 65, 75, 66, 128, 154]
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: Yes there were 5 data points which were considered outliers for more than 1 feature set, namely points 154, 65, 75, 66 and 128. Data point 154 is infact an outlier in 3 feature sets.
-Yes these data points should be removed from the dataset as they are noise to the dataset, and skew the analyses.</strong></p>
+Yes these data points should be removed from the dataset as they are quite different from the other samples in the dataset. Outliers could be due to improper data collection or just a very different situation, that is not likely observed in most of the other samples we are considering. As a result, keeping them in our dataset while clustering might lead to a model that is not generalized enough. In other words, training with outliers could result in a model that does not perform well on an unseen test dataset.</strong></p>
 
 </div>
 </div>
@@ -14726,13 +14726,14 @@ Yes these data points should be removed from the dataset as they are noise to th
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: The first and second principal components account for 49.93 and 22.59 % of the variance respectively, adding up to 72.53%.
-The total variance explained by the first four principal components is 92.80.
-Dimension 1 represents the Detergents_Paper feature very well, and to some extent also the Milk and Grocery features.
-Dimension 2 represents the Frozen feature the best and also the Fresh and Delicatessen features.
-Dimension 3 represents the  Fresh feature the best and also the Delicatessen feature to some extent.
-Dimension 4 represents the Frozen feature the best and also the Delicatessen to some extent.
-%</strong></p>
+<p>**Answer: The first and second principal components account for 49.93 and 22.59 % of the variance respectively, adding up to 72.53%.
+The total variance explained by the first four principal components is 92.80.</p>
+<p>Milk, grocery as well as detergents paper contribute heavily to Dimension 1.
+Fresh, frozen and delicatessen contribute heavily to Dimension 2.
+Fresh, and delicatessen contribute heavily to Dimension 3. Although fresh has a negative weight contributing to this dimension, its high value still implies that it is a significant feature in dimension3.
+Dimension 4 gives a high weightage to frozen as well as delicatessen.</p>
+<p>Based on the above observations, it is seen that significant expenditure on milk, grocery and detergents paper altogether is probably a good indicator of what the customer segment is. Similar to that is the expenditure on fresh and frozen together. However, from the third principal component, it is seen that expenditure on more of fresh and less of frozen or vice versa is also an important feature. We could think of it this way. A convenience store is usually a place where people would buy more of frozen and less of fresh, whereas in a market people are more likely to buy fresh than frozen. Thus by considering a feature that weighs fresh and frozen in opposite directions, we have a good way of clustering convenience stores and markets separately. In this way, 4th principal component indicates that customers spending more on frozen are less likely to spend on delicatessen and vice versa. 
+%**</p>
 
 </div>
 </div>
