@@ -13627,10 +13627,22 @@ The Third Customer may be a market or a wholesale Retailer based on the higher t
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>**Answer:</p>
+<ul>
+<li><p>Using the scatter matrix as a reference, discuss the distribution of the dataset, specifically talk about the normality, outliers, large number of data points near 0 among others. If you need to sepearate out some of the plots individually to further accentuate your point, you may do so as well.</p>
+</li>
+<li><p>Are there any pairs of features which exhibit some degree of correlation?</p>
+</li>
+</ul>
 <p>The features Grocery, Milk and Detergents_Paper appear to exhibit some amount of correlation based on the above plots. Particularly, the Detergents_Paper and Grocery features appear to exhibit a very high degree of correlation.
-The features Fresh, Frozen, Delicatessen all appear to have very low correlation with any of the other features, thereby exhbiting values close to 0 in the scatter plots.<br>
-I had attempted to predict Grocery based on the other features in the dataset, but obtained a R2 score of 0.6819 which indicated some amount of correlation with the other features. The scatter matrix indicates the correlation of Grocery feature with Milk and Detergents_Paper, but not with the other features in the dataset thereby confirming my earlier inference.
-Looking at the plots of correlation between Grocery and all other features, the data appears not to be normally distributed as they are all skewed towards the right.**</p>
+The features Fresh, Frozen, Delicatessen all appear to have very low correlation with any of the other features, thereby exhbiting values close to 0 in the scatter plots.</p>
+<ul>
+<li>Does this confirm or deny your suspicions about the relevance of the feature you attempted to predict?</li>
+</ul>
+<p>I had attempted to predict Grocery based on the other features in the dataset, but obtained a R2 score of 0.6819 which indicated some amount of correlation with the other features. The scatter matrix indicates the correlation of Grocery feature with Milk and Detergents_Paper, but not with the other features in the dataset thereby confirming my earlier inference. Thus, as predicted in the earlier section, based on the R2 scores after feature removal, "Grocery" is indeed correlated with other features, namely milk and detergents_paper.</p>
+<ul>
+<li>How is the data for those features distributed?</li>
+</ul>
+<p>Looking at the plots of correlation between Grocery and all other features, the data appears not to be normally distributed as they are all skewed towards the right.**</p>
 
 </div>
 </div>
